@@ -79,7 +79,7 @@ To see the compatibility matrix of Python vs. Ansible versions see [Travis-CI bu
 
 ## Dependencies
 
-* In case of OS Family RedHat/Centos/OracleLinux/Rocky [EPEL Repository](https://fedoraproject.org/wiki/EPEL) could be necessary
+* In case of OS Family RedHat/Centos [EPEL Repository](https://fedoraproject.org/wiki/EPEL) could be necessary
 * If you set `cwa_agent_mode: "onPremise"` the [AWS CLI Profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) configuration is needed
 * If you [Retrieve Custom Metrics with collectd](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-custom-metrics-collectd.html) the package `collectd` will installed automatically and depending on the `OS` the [EPEL Repository](https://fedoraproject.org/wiki/EPEL) could be necessary
 
