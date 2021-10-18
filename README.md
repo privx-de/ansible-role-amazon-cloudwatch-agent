@@ -42,6 +42,11 @@ This role work on RedHat, CentOS, Amazon Linux, Debian and Ubuntu distributions
   * 8
 * Amazon Linux
   * 2
+* Oracle Linux
+  * 7
+  * 8
+* Rocky Linux
+  * 8
 * Ubuntu
   * 14.04 (*)
   * 16.04 (*)
@@ -74,7 +79,7 @@ To see the compatibility matrix of Python vs. Ansible versions see [Travis-CI bu
 
 ## Dependencies
 
-* In case of OS Family RedHat/Centos [EPEL Repository](https://fedoraproject.org/wiki/EPEL) could be necessary
+* In case of OS Family RedHat/Centos/OracleLinux/Rocky [EPEL Repository](https://fedoraproject.org/wiki/EPEL) could be necessary
 * If you set `cwa_agent_mode: "onPremise"` the [AWS CLI Profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) configuration is needed
 * If you [Retrieve Custom Metrics with collectd](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-custom-metrics-collectd.html) the package `collectd` will installed automatically and depending on the `OS` the [EPEL Repository](https://fedoraproject.org/wiki/EPEL) could be necessary
 
@@ -96,7 +101,9 @@ To see the compatibility matrix of Python vs. Ansible versions see [Travis-CI bu
           ansible_os_family == 'RedHat' and (
             ansible_distribution == 'CentOS' or
             ansible_distribution == 'RedHat' or
-            ansible_distribution == 'Amazon'
+            ansible_distribution == 'Amazon' or
+            ansible_distribution == 'OracleLinux' or
+            ansible_distribution == 'Rocky'
           )
       - role: christiangda.awscli_configure # If you don't have configured AWS CLI Profiles
         vars:
@@ -154,7 +161,9 @@ Reading config file from JSON configuration file
           ansible_os_family == 'RedHat' and (
             ansible_distribution == 'CentOS' or
             ansible_distribution == 'RedHat' or
-            ansible_distribution == 'Amazon'
+            ansible_distribution == 'Amazon' or
+            ansible_distribution == 'OracleLinux' or
+            ansible_distribution == 'Rocky'
           )
       - role: christiangda.awscli_configure
         vars:
